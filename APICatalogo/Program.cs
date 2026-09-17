@@ -27,8 +27,8 @@ builder.Services.AddControllers(options =>
 }).AddNewtonsoftJson();
 
 
-builder.Services.AddAuthentication();
-builder.Services.AddAuthentication("Bearer").AddJwtBearer();
+//builder.Services.AddAuthentication();
+//builder.Services.AddAuthentication("Bearer").AddJwtBearer();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -124,6 +124,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

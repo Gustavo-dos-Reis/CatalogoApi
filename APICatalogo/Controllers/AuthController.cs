@@ -137,7 +137,7 @@ namespace APICatalogo.Controllers
         [Route("register")]
         public async Task<IActionResult> Register([FromBody] RegisterModel model)
         {
-            var userExists = await _userManager.FindByEmailAsync(model.UserName!);
+            var userExists = await _userManager.FindByNameAsync(model.UserName!);
 
             if (userExists != null)
             {
